@@ -6,14 +6,16 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-	private static final double VERSION = 1.2;
+	private static final String VERSION = "1.2.2.1";
 	private static final boolean IS_ALPHA = true;
+	private static final boolean IS_BETA = false;
 
 	private static final String[] bgs = ("background RootPane.background Panel.background Button.background Menu.background" +
-			" MenuBar.background MenuItem.background JTree.background Tree.background nimbusBase TextField.background JPanel.background").split(" ");
+			" MenuBar.background MenuItem.background JTree.background Tree.background nimbusBase TextField.background JPanel.background TextPane.background " +
+			"JComponent.background").split(" ");
 
 	private MainFrame() {
-		super("GameMake Studio " + VERSION + (IS_ALPHA ? "-alpha" : ""));
+		super("GameMake Studio " + VERSION + (IS_ALPHA ? "-alpha" : (IS_BETA ? "-beta" : "")));
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
 			UIDefaults def = UIManager.getDefaults();
