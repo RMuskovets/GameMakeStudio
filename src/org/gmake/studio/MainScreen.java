@@ -36,6 +36,7 @@ public class MainScreen {
 			map.put(new TreePath(((DefaultMutableTreeNode) spr.node).getPath()), spr);
 			sprites.repaint();
 		});
+
 	}
 
 	/**
