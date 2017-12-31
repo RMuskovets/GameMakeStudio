@@ -14,8 +14,6 @@ public class MainFrame extends JFrame {
 
 	private MainFrame() {
 		super("GameMake Studio " + VERSION + (IS_ALPHA ? "-alpha" : ""));
-		MainScreen screen = new MainScreen();
-		setContentPane(screen.$$$getRootComponent$$$());
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
 			UIDefaults def = UIManager.getDefaults();
@@ -25,6 +23,8 @@ public class MainFrame extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		MainScreen screen = new MainScreen();
+		setContentPane(screen.$$$getRootComponent$$$());
 		setSize(800, 600);
 		setMinimumSize(new Dimension(600, 400));
 		getContentPane().setBackground(new Color(90, 90, 90));
