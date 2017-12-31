@@ -24,8 +24,12 @@ public class MainFrame extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		getContentPane().setBackground(new Color(50, 50, 100));
+		setSize(800, 600);
+		setMinimumSize(new Dimension(600, 400));
+		getContentPane().setBackground(new Color(90, 90, 90));
 		getContentPane().repaint();
+		getContentPane().setLayout(new BorderLayout());
+
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
