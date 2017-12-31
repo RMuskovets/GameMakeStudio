@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-	private static final double VERSION = 1.1;
+	private static final double VERSION = 1.2;
 	private static final boolean IS_ALPHA = true;
 
 	private static final String[] bgs = ("background RootPane.background Panel.background Button.background Menu.background" +
