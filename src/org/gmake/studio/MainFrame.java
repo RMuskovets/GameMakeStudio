@@ -6,15 +6,16 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-	private static final double VERSION = 1.0;
+	private static final double VERSION = 1.1;
 	private static final boolean IS_ALPHA = true;
 
-	private String[] bgs = ("background RootPane.background Panel.background Button.background Menu.background" +
-			" MenuBar.background MenuItem.background Tree.background nimbusBase TextField.background").split(" ");
+	private static final String[] bgs = ("background RootPane.background Panel.background Button.background Menu.background" +
+			" MenuBar.background MenuItem.background JTree.background Tree.background nimbusBase TextField.background JPanel.background").split(" ");
 
 	private MainFrame() {
 		super("GameMake Studio " + VERSION + (IS_ALPHA ? "-alpha" : ""));
-		setContentPane(new Panel());
+		MainScreen screen = new MainScreen();
+		setContentPane(screen.$$$getRootComponent$$$());
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
 			UIDefaults def = UIManager.getDefaults();
@@ -28,10 +29,9 @@ public class MainFrame extends JFrame {
 		setMinimumSize(new Dimension(600, 400));
 		getContentPane().setBackground(new Color(90, 90, 90));
 		getContentPane().repaint();
-		getContentPane().setLayout(new BorderLayout());
-
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
+		setJMenuBar(screen.mb);
 	}
 
 	public static void main(String[] args) {

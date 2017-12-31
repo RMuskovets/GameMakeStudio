@@ -1,4 +1,7 @@
 package org.gmake.studio;
 
-public class GamePanel {
+import javax.swing.*;
+
+public class GamePanel extends JPanel {
+
 }
