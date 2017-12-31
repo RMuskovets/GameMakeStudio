@@ -31,7 +31,6 @@ public class MainFrame extends JFrame {
 		getContentPane().repaint();
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
-		setJMenuBar(screen.mb);
 	}
 
 	public static void main(String[] args) {
