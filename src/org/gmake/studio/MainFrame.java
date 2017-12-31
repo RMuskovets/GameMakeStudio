@@ -7,12 +7,13 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
 	private static final double VERSION = 1.0;
+	private static final boolean IS_ALPHA = true;
 
 	private String[] bgs = ("background RootPane.background Panel.background Button.background Menu.background" +
 			" MenuBar.background MenuItem.background Tree.background nimbusBase TextField.background").split(" ");
 
-	MainFrame() {
-		super("GameMake Studio " + VERSION);
+	private MainFrame() {
+		super("GameMake Studio " + VERSION + (IS_ALPHA ? "-alpha" : ""));
 		setContentPane(new Panel());
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
@@ -23,7 +24,7 @@ public class MainFrame extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		getContentPane().setBackground(new Color(0, 0, 0, 170));
+		getContentPane().setBackground(new Color(50, 50, 100));
 		getContentPane().repaint();
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
